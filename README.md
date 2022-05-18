@@ -3,6 +3,9 @@ Código con OpenCV para cambiar colores específicos de una imagen a partir del 
 
 Paso 1: Leer imagen de la computadora en BGR y convertir a su inverso para verlo en la escala normal de colores (RGB). Después cambiar al formato por tono, saturación y brillo (HSV). La imagen se va a trabajar a partir del formato HSV.
 
+    img = cv2.imread('IMG-3568.jpg')
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
 Paso 2: Crear una máscara que marque los límites del tono del color que vamos a cambiar (azul). En este caso el rango menor del azul en HSV es 90, 50 y 50, respectivamente; y el rango mayor del azul es de 130, 255, 255, respectivamente.
 
     lower = np.array([90, 50, 50])
